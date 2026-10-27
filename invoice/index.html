@@ -3,86 +3,160 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Invoice — Support</title>
-<meta name="description" content="Support for the Invoice app: backups, moving devices, Invoice Pro and privacy.">
-<style>
-  :root { --bg:#F5F5F2; --surface:#FFFFFF; --text:#1C1C1A; --muted:#5B5B57; --brand:#0F4D3A; --line:#E2E2DC; }
-  @media (prefers-color-scheme: dark) { :root { --bg:#111311; --surface:#1A1D1B; --text:#ECECE8; --muted:#A4A6A0; --brand:#46C590; --line:#2C302D; } }
-  * { box-sizing: border-box; }
-  body { margin:0; background:var(--bg); color:var(--text); font:16px/1.6 -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; }
-  main { max-width:760px; margin:0 auto; padding:32px 16px 64px; }
-  nav { display:flex; gap:16px; flex-wrap:wrap; font-size:15px; margin-bottom:24px; }
-  a { color:var(--brand); }
-  h1 { font-size:30px; line-height:1.2; margin:0 0 4px; }
-  h2 { font-size:20px; margin:32px 0 8px; }
-  .meta { color:var(--muted); margin:0 0 16px; }
-  .card { background:var(--surface); border:1px solid var(--line); border-radius:16px; padding:16px 20px; }
-  section + section { margin-top:56px; padding-top:32px; border-top:1px solid var(--line); }
-  li { margin:4px 0; }
-</style>
+<title>Invoice — quotes, invoices and deposits on iPhone, iPad and Android</title>
+<meta name="description" content="Send a quote, turn it into an invoice in one tap, record deposits and part payments, and see what each client still owes. Works offline, no account.">
+<meta name="campaign" content="landing">
+<link rel="canonical" href="https://minhvblc.github.io/invoice/">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Invoice — quotes, invoices and deposits">
+<meta property="og:description" content="Quote → invoice → deposit → paid. Works offline, no account, your data stays on your phone.">
+<meta property="og:url" content="https://minhvblc.github.io/invoice/">
+<meta property="og:image" content="https://minhvblc.github.io/invoice/img/01-overview.jpg">
+<link rel="icon" href="icon.png">
+<link rel="apple-touch-icon" href="icon.png">
+<link rel="stylesheet" href="site.css">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "SoftwareApplication",
+  "name": "Invoice – Quotes & Payments",
+  "applicationCategory": "BusinessApplication",
+  "operatingSystem": "iOS, iPadOS, Android",
+  "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
+  "url": "https://minhvblc.github.io/invoice/"
+}
+</script>
 </head>
 <body>
-<main>
-<nav><a href="#en">English</a><a href="#vi">Tiếng Việt</a><a href="privacy.html">Privacy</a><a href="terms.html">Terms</a></nav>
+<div class="wrap">
+<header class="top">
+  <a class="brand" href="./"><img src="icon.png" alt="">Invoice</a>
+  <nav><a href="#features">Features</a><a href="#pricing">Free &amp; Pro</a><a href="#made-with">Received a PDF?</a><a href="support.html">Support</a></nav>
+</header>
 
-<section id="en" lang="en">
-<h1>Invoice — Support</h1>
-<p class="meta">Quotes, invoices and payments for freelancers and small teams. Works fully without an account; online features only send what they need.</p>
-<div class="card"><p>Questions, bugs or ideas: <a href="mailto:ngducminhvblc@gmail.com">ngducminhvblc@gmail.com</a>. Please include your device, the app version
-(shown at the bottom of Settings) and what you were doing. Never send us a backup file unless we ask — it contains your customers' data.</p></div>
+<div class="hero">
+  <div>
+    <h1>Quote. Invoice. Deposit. Paid.</h1>
+    <p class="lead">Invoice helps freelancers, self-employed people and small service businesses get paid: send a quote, turn it into an invoice in one tap,
+      record deposits and part payments, and always know what each client still owes.</p>
+    <div class="cta">
+      <a class="btn primary" data-store="ios" href="https://apps.apple.com/app/apple-store/id6825215204?mt=8&amp;ct=landing">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3v12m0 0l-5-5m5 5l5-5M5 21h14"/></svg>
+        <span><span class="sub">Download for</span><span class="main">iPhone &amp; iPad</span></span></a>
+      <a class="btn secondary" data-store="android" href="https://play.google.com/store/apps/details?id=com.minh.invoice&amp;referrer=utm_source%3Dlanding%26utm_medium%3Dweb%26utm_campaign%3Dlanding">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3v12m0 0l-5-5m5 5l5-5M5 21h14"/></svg>
+        <span><span class="sub">Get it for</span><span class="main">Android</span></span></a>
+    </div>
+    <p class="muted small">Free to start · No account, no sign-up · Works offline</p>
+  </div>
+  <img class="shot" src="img/01-overview.jpg" width="560" height="1216" alt="Invoice overview screen: outstanding balance, open and overdue invoices, and clients that need attention">
+</div>
+</div>
 
-<h2>Where is my data?</h2>
-<p>Only on your device. Invoice works fully without an account and we keep no copy of your data, so use
-<em>Settings › Backup &amp; restore</em> regularly and keep the backup file somewhere safe.</p>
-
-<h2>Moving to a new phone (also iPhone ↔ Android)</h2>
-<p>On the old device export a backup (<code>.invoicebackup</code>). On the new device install Invoice, open <em>Settings › Backup &amp; restore › Restore from a backup</em>
-and pick the file. Restoring replaces the data on the new device after showing you a preview.</p>
-
-<h2>Invoice Pro</h2>
-<ul>
-  <li>Bought Pro but it is not active? Tap <em>Settings › Restore purchases</em> while signed in to the same Apple ID or Google account.</li>
-  <li>Cancel or change plan: iPhone — <em>Settings › [your name] › Subscriptions</em>; Android — <a href="https://play.google.com/store/account/subscriptions">Google Play › Payments &amp; subscriptions</a>.</li>
-  <li>A Pro purchase on iPhone does not unlock Pro on Android, and vice versa: the stores do not share purchases.</li>
-</ul>
-
-<h2>Ads and privacy</h2>
-<p>The free plan shows ads; Pro has none. Change your ad consent in <em>Settings › Ad privacy choices</em> (where applicable). Details in the <a href="privacy.html">Privacy Policy</a>.</p>
-
-<h2>Is a PDF from Invoice a legal tax invoice?</h2>
-<p>The app prepares documents with the information you enter; it does not register them with a tax authority and does not replace certified e-invoices
-where those are mandatory (for example in Vietnam). Check the rules that apply to your business.</p>
+<section id="features">
+<div class="wrap">
+  <h2>Everything between “here’s my price” and “thanks, paid”</h2>
+  <div class="shots" role="list">
+    <img role="listitem" src="img/04-convert-quote.jpg" width="560" height="1216" loading="lazy" alt="An accepted quote with a Convert to invoice button">
+    <img role="listitem" src="img/05-payments.jpg" width="560" height="1216" loading="lazy" alt="An invoice with a 40% deposit recorded and the balance due">
+    <img role="listitem" src="img/06-pdf.jpg" width="560" height="1216" loading="lazy" alt="PDF preview with Classic, Modern and Minimal templates and accent colours">
+    <img role="listitem" src="img/02-documents.jpg" width="560" height="1216" loading="lazy" alt="List of quotes and invoices with their status">
+    <img role="listitem" src="img/03-editor.jpg" width="560" height="1216" loading="lazy" alt="Document editor with client, items, discount and tax">
+  </div>
+  <div class="grid" style="margin-top:24px">
+    <div class="card">
+      <h3>Quotes to invoices</h3>
+      <ul>
+        <li>Create a quote in seconds from saved clients and services</li>
+        <li>Client says yes? Convert it to an invoice in one tap</li>
+        <li>Numbers are assigned automatically and never reused</li>
+        <li>Discounts and tax rates per document</li>
+      </ul>
+    </div>
+    <div class="card">
+      <h3>Deposits and balances</h3>
+      <ul>
+        <li>Record deposits and part payments; reverse one if you made a mistake</li>
+        <li>Outstanding and overdue at a glance, per currency</li>
+        <li>Fix a sent invoice with a credit note, not a silent edit</li>
+      </ul>
+    </div>
+    <div class="card">
+      <h3>PDFs that follow your country</h3>
+      <ul>
+        <li>The tax IDs, notices and numbering the seller’s country expects — for the US, Canada, the UK, Germany, Austria, Switzerland, France, the Netherlands, Belgium and Vietnam</li>
+        <li>Documents in English, German, French, Spanish, Dutch or Vietnamese; A4 or Letter</li>
+        <li>Your logo, business details, payment details and page numbers</li>
+      </ul>
+    </div>
+    <div class="card">
+      <h3>Your data stays on your device</h3>
+      <ul>
+        <li>No account, no sign-up, works offline</li>
+        <li>Quotes, invoices and clients are stored on your phone or tablet — the app has no server</li>
+        <li>Back up to a file you keep; restore it on a new iPhone, iPad or Android phone</li>
+      </ul>
+    </div>
+  </div>
+</div>
 </section>
 
-<section id="vi" lang="vi">
-<h1>Invoice — Hỗ trợ</h1>
-<p class="meta">Báo giá, invoice và thu tiền cho người làm tự do và nhóm nhỏ. Hoạt động đầy đủ không cần tài khoản; tính năng online chỉ gửi dữ liệu cần thiết.</p>
-<div class="card"><p>Câu hỏi, lỗi hoặc góp ý: <a href="mailto:ngducminhvblc@gmail.com">ngducminhvblc@gmail.com</a>. Vui lòng ghi thiết bị, phiên bản ứng dụng
-(cuối màn hình Cài đặt) và thao tác bạn đang làm. Đừng gửi file sao lưu trừ khi chúng tôi đề nghị — file đó chứa dữ liệu khách hàng của bạn.</p></div>
-
-<h2>Dữ liệu của tôi nằm ở đâu?</h2>
-<p>Chỉ trên thiết bị của bạn. Hoạt động đầy đủ không cần tài khoản và chúng tôi không giữ bản sao dữ liệu nào, nên hãy dùng
-<em>Cài đặt › Sao lưu &amp; khôi phục</em> thường xuyên và cất file sao lưu ở nơi an toàn.</p>
-
-<h2>Chuyển sang máy mới (kể cả iPhone ↔ Android)</h2>
-<p>Trên máy cũ, xuất bản sao lưu (<code>.invoicebackup</code>). Trên máy mới, cài Invoice, mở <em>Cài đặt › Sao lưu &amp; khôi phục › Khôi phục từ bản sao lưu</em> và chọn file.
-Khôi phục sẽ thay dữ liệu trên máy mới sau khi cho bạn xem trước.</p>
-
-<h2>Invoice Pro</h2>
-<ul>
-  <li>Đã mua Pro nhưng chưa kích hoạt? Chạm <em>Cài đặt › Khôi phục giao dịch mua</em> khi đang đăng nhập đúng Apple ID hoặc tài khoản Google đã mua.</li>
-  <li>Huỷ hoặc đổi gói: iPhone — <em>Cài đặt › [tên bạn] › Đăng ký</em>; Android — <a href="https://play.google.com/store/account/subscriptions">Google Play › Thanh toán và gói thuê bao</a>.</li>
-  <li>Mua Pro trên iPhone không mở Pro trên Android và ngược lại: hai cửa hàng không dùng chung giao dịch.</li>
-</ul>
-
-<h2>Quảng cáo và quyền riêng tư</h2>
-<p>Bản miễn phí có quảng cáo; Pro không có. Đổi lựa chọn đồng ý tại <em>Cài đặt › Tuỳ chọn quyền riêng tư quảng cáo</em> (khi áp dụng). Chi tiết trong <a href="privacy.html">Chính sách quyền riêng tư</a>.</p>
-
-<h2>PDF từ Invoice có phải hoá đơn hợp lệ về thuế?</h2>
-<p>Ứng dụng soạn chứng từ từ thông tin bạn nhập; không đăng ký chứng từ với cơ quan thuế và <strong>không thay thế hoá đơn điện tử</strong> ở nơi bắt buộc
-(ví dụ tại Việt Nam). Hãy kiểm tra quy định áp dụng cho doanh nghiệp của bạn.</p>
+<section id="pricing">
+<div class="wrap narrow">
+  <h2>Free and Pro</h2>
+  <table class="plans">
+    <tr><th></th><th>Free</th><th>Invoice Pro</th></tr>
+    <tr><td>Quotes, clients, payments, backups</td><td>Unlimited</td><td>Unlimited</td></tr>
+    <tr><td>Invoices</td><td>3 in total</td><td>Unlimited</td></tr>
+    <tr><td>PDF templates</td><td>Classic</td><td>Classic, Modern, Minimal, DIN 5008</td></tr>
+    <tr><td>Your accent colour on PDFs</td><td>—</td><td class="check">✓</td></tr>
+    <tr><td>Payment QR codes (EPC/GiroCode for SEPA euro transfers, Swiss QR-bill)</td><td>—</td><td class="check">✓</td></tr>
+    <tr><td>Small “Made with Invoice” line in the PDF footer</td><td>Yes</td><td>No</td></tr>
+    <tr><td>Ads</td><td>Yes</td><td>No</td></tr>
+  </table>
+  <p class="muted small" style="margin-top:12px">Invoice Pro is an auto-renewing subscription, billed weekly, monthly or yearly through the App Store or Google Play.
+    Weekly and yearly plans start with a free trial for eligible new subscribers. The price for your country is shown in the app before you subscribe.</p>
+</div>
 </section>
 
-</main>
+<section id="made-with">
+<div class="wrap narrow">
+  <div class="callout">
+    <h2>Received a PDF that says “Made with Invoice”?</h2>
+    <p>The sender created that quote or invoice with this app on their own phone. We never see or store the documents people send,
+      so for anything about the amount, payment details or due date, please contact the sender directly.</p>
+    <p>Want to send documents like it yourself? Invoice is free to start on <a data-store="ios" href="https://apps.apple.com/app/apple-store/id6825215204?mt=8&amp;ct=landing">iPhone and iPad</a>
+      and <a data-store="android" href="https://play.google.com/store/apps/details?id=com.minh.invoice&amp;referrer=utm_source%3Dlanding%26utm_medium%3Dweb%26utm_campaign%3Dlanding">Android</a>.</p>
+  </div>
+</div>
+</section>
+
+<section id="limits">
+<div class="wrap narrow">
+  <h2>Good to know before you start</h2>
+  <p>Invoice prepares documents from the information you enter. It does not send them to a tax authority and is not a certified e-invoicing system,
+    so check whether your country requires one.</p>
+  <div class="note">
+    <p><strong>Where the app can’t issue invoices.</strong> Invoice cannot issue invoices or credit notes for sellers based in Spain, Italy, Portugal, Romania, Hungary,
+      Mexico, Brazil, Argentina, Chile, Colombia, Peru, Ecuador, Uruguay or Costa Rica. The same applies to business-to-business invoices from sellers in Poland,
+      Croatia or Greece, and to invoices from VAT-registered sellers in Belgium to Belgian business clients. In these cases the law requires an official or certified
+      e-invoicing system.</p>
+    <p style="margin:0">You can still create quotes and pro formas there and issue the invoice itself in an official tool. Deposits, payments and client balances only work
+      with invoices issued in the app.</p>
+  </div>
+  <p class="muted small" style="margin-top:12px">The free plan shows ads from Google AdMob and partner networks, which collect device identifiers, approximate location,
+    usage and diagnostic data to show and measure ads (the app asks for consent where required). They never receive your quotes, invoices or client details.
+    Details in the <a href="privacy.html">Privacy Policy</a>.</p>
+</div>
+</section>
+
+<div class="wrap">
+<footer class="site">
+  <nav><a href="support.html">Support</a><a href="privacy.html">Privacy Policy</a><a href="terms.html">Terms of Use</a><a href="mailto:ngducminhvblc@gmail.com">ngducminhvblc@gmail.com</a></nav>
+  <nav><span>Free tools &amp; guides:</span><a href="de/girocode-erstellen.html" hreflang="de">GiroCode erstellen</a><a href="de/kleinunternehmer-rechnung.html" hreflang="de">Rechnung als Kleinunternehmer</a></nav>
+  <p>Invoice is made by Nguyen Minh, an independent developer. Not tax or legal advice.</p>
+</footer>
+</div>
+<script src="store-links.js"></script>
 </body>
 </html>

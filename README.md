@@ -4,7 +4,9 @@ Trang công khai (GitHub Pages) cho app của Nguyen Minh.
 
 | Trang | URL |
 | --- | --- |
-| Invoice — hỗ trợ | https://minhvblc.github.io/invoice/ |
+| Invoice — giới thiệu (đích của dòng "Made with Invoice" trên PDF) | https://minhvblc.github.io/invoice/ |
+| Invoice — hỗ trợ | https://minhvblc.github.io/invoice/support.html |
+| Trang SEO / công cụ (tiếng Đức) | https://minhvblc.github.io/invoice/de/kleinunternehmer-rechnung.html, https://minhvblc.github.io/invoice/de/girocode-erstellen.html |
 | Invoice — chính sách quyền riêng tư | https://minhvblc.github.io/invoice/privacy.html |
 | Invoice — điều khoản sử dụng | https://minhvblc.github.io/invoice/terms.html |
 

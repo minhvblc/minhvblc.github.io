@@ -5,25 +5,22 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Invoice — Support</title>
 <meta name="description" content="Support for the Invoice app: backups, moving devices, Invoice Pro and privacy.">
-<style>
-  :root { --bg:#F5F5F2; --surface:#FFFFFF; --text:#1C1C1A; --muted:#5B5B57; --brand:#0F4D3A; --line:#E2E2DC; }
-  @media (prefers-color-scheme: dark) { :root { --bg:#111311; --surface:#1A1D1B; --text:#ECECE8; --muted:#A4A6A0; --brand:#46C590; --line:#2C302D; } }
-  * { box-sizing: border-box; }
-  body { margin:0; background:var(--bg); color:var(--text); font:16px/1.6 -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; }
-  main { max-width:760px; margin:0 auto; padding:32px 16px 64px; }
-  nav { display:flex; gap:16px; flex-wrap:wrap; font-size:15px; margin-bottom:24px; }
-  a { color:var(--brand); }
-  h1 { font-size:30px; line-height:1.2; margin:0 0 4px; }
-  h2 { font-size:20px; margin:32px 0 8px; }
-  .meta { color:var(--muted); margin:0 0 16px; }
-  .card { background:var(--surface); border:1px solid var(--line); border-radius:16px; padding:16px 20px; }
-  section + section { margin-top:56px; padding-top:32px; border-top:1px solid var(--line); }
-  li { margin:4px 0; }
-</style>
+<meta name="theme-color" content="#F5F5F2" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#0C0D0D" media="(prefers-color-scheme: dark)">
+<link rel="icon" href="icon.png">
+<link rel="stylesheet" href="site.css">
 </head>
 <body>
-<main>
-<nav><a href="./">Invoice</a><a href="#en">English</a><a href="#vi">Tiếng Việt</a><a href="privacy.html">Privacy</a><a href="terms.html">Terms</a></nav>
+<div class="wrap">
+<header class="top">
+  <a class="brand" href="./"><img src="icon.png" alt="" width="32" height="32">Invoice</a>
+  <nav aria-label="Main">
+    <a href="./#features">Features</a><a class="keep" href="support.html">Support</a><a href="privacy.html">Privacy</a><a href="terms.html">Terms</a>
+    <a class="pill" href="./#get">Download</a>
+  </nav>
+</header>
+<main class="doc">
+<nav class="langs" aria-label="Language"><a href="#en">English</a><a href="#vi">Tiếng Việt</a></nav>
 
 <section id="en" lang="en">
 <h1>Invoice — Support</h1>
@@ -92,5 +89,19 @@ người gửi đã tạo nó trên thiết bị của họ — chúng tôi khô
 </section>
 
 </main>
+</div>
+<footer class="site">
+<div class="wrap">
+  <div class="cols">
+    <div><a class="brand" href="./"><img src="icon.png" alt="" width="32" height="32">Invoice</a>
+      <p class="about">Made by Nguyen Minh, an independent developer. Not tax or legal advice.</p></div>
+    <div><h2>App</h2><ul><li><a href="support.html">Support</a></li><li><a href="privacy.html">Privacy Policy</a></li><li><a href="terms.html">Terms of Use</a></li><li><a href="impressum.html" hreflang="de">Impressum</a></li>
+      <li><a href="mailto:ngducminhvblc@gmail.com">ngducminhvblc@gmail.com</a></li></ul></div>
+    <div><h2>Free tools &amp; guides</h2><ul><li><a href="de/girocode-erstellen.html" hreflang="de">GiroCode erstellen</a></li>
+      <li><a href="de/kleinunternehmer-rechnung.html" hreflang="de">Rechnung als Kleinunternehmer</a></li>
+      <li><a href="fr/facture-auto-entrepreneur.html" hreflang="fr">Facture auto-entrepreneur</a></li></ul></div>
+  </div>
+</div>
+</footer>
 </body>
 </html>

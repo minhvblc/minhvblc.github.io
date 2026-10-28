@@ -4,36 +4,34 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Invoice — Privacy Policy</title>
-<meta name="description" content="Privacy policy of the Invoice app for iOS and Android.">
-<style>
-  :root { --bg:#F5F5F2; --surface:#FFFFFF; --text:#1C1C1A; --muted:#5B5B57; --brand:#0F4D3A; --line:#E2E2DC; }
-  @media (prefers-color-scheme: dark) { :root { --bg:#111311; --surface:#1A1D1B; --text:#ECECE8; --muted:#A4A6A0; --brand:#46C590; --line:#2C302D; } }
-  * { box-sizing: border-box; }
-  body { margin:0; background:var(--bg); color:var(--text); font:16px/1.6 -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; }
-  main { max-width:760px; margin:0 auto; padding:32px 16px 64px; }
-  nav { display:flex; gap:16px; flex-wrap:wrap; font-size:15px; margin-bottom:24px; }
-  a { color:var(--brand); }
-  h1 { font-size:30px; line-height:1.2; margin:0 0 4px; }
-  h2 { font-size:20px; margin:32px 0 8px; }
-  .meta { color:var(--muted); margin:0 0 16px; }
-  .card { background:var(--surface); border:1px solid var(--line); border-radius:16px; padding:16px 20px; }
-  section + section { margin-top:56px; padding-top:32px; border-top:1px solid var(--line); }
-  li { margin:4px 0; }
-</style>
+<meta name="description" content="Privacy policy of the Invoice app for iOS and Android and of this website.">
+<meta name="theme-color" content="#F5F5F2" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#0C0D0D" media="(prefers-color-scheme: dark)">
+<link rel="icon" href="icon.png">
+<link rel="stylesheet" href="site.css">
 </head>
 <body>
-<main>
-<nav><a href="./">Invoice</a><a href="#en">English</a><a href="#vi">Tiếng Việt</a><a href="terms.html">Terms</a><a href="support.html">Support</a></nav>
+<div class="wrap">
+<header class="top">
+  <a class="brand" href="./"><img src="icon.png" alt="" width="32" height="32">Invoice</a>
+  <nav aria-label="Main">
+    <a href="./#features">Features</a><a class="keep" href="support.html">Support</a><a href="privacy.html">Privacy</a><a href="terms.html">Terms</a>
+    <a class="pill" href="./#get">Download</a>
+  </nav>
+</header>
+<main class="doc">
+<nav class="langs" aria-label="Language"><a href="#en">English</a><a href="#vi">Tiếng Việt</a><a href="#website-de" lang="de">Website (Deutsch)</a><a href="#website-fr" lang="fr">Site web (français)</a></nav>
 
 <section id="en" lang="en">
 <h1>Privacy Policy</h1>
-<p class="meta">Invoice for iOS and Android · Last updated 21 October 2026</p>
+<p class="meta">Invoice for iOS and Android, and this website · Last updated 27 October 2026</p>
 <div class="card">
 <p><strong>In short:</strong> Invoice works fully without an account and we run no server for it: your business data stays on your device and is never sent to us.
 If you tap the button to fetch an exchange rate, the app downloads public exchange rates from an official source such as the European Central Bank;
 that request contains only currency codes and a date.
 The free plan shows ads from Google AdMob and its partners, which may use your device's advertising identifier according to your consent choices.
-Pro subscriptions are processed by Apple or Google. We do not run analytics.</p>
+Those ad providers also collect identifiers, usage and diagnostic data to measure ads; the app runs no analytics of its own.
+Pro subscriptions are processed by Apple or Google. This website sets no cookies and runs no analytics (see section 11).</p>
 </div>
 
 <h2>Who we are</h2>
@@ -86,7 +84,7 @@ The app reads the status of your purchase from the store on your device to unloc
 
 <h2>6. What we do not do</h2>
 <ul>
-  <li>No analytics or crash-reporting services, and no tracking of how you use the app.</li>
+  <li>No analytics or crash-reporting services of our own. In the free plan, the advertising providers in section 4 measure ads and may use the IDFA or Advertising ID for tracking, only with your consent where required.</li>
   <li>No selling of the data you enter or sharing it with advertising partners.</li>
   <li>No collection of data from children: the app is a business tool not directed at children.</li>
 </ul>
@@ -109,17 +107,28 @@ Files you export leave that protection, so choose where you store them.</p>
 
 <h2>10. Changes</h2>
 <p>If this policy changes, we will update this page and the date above. Significant changes will also be noted in the app's release notes.</p>
+
+<h2 id="website">11. This website</h2>
+<p>This website (minhvblc.github.io/invoice) is hosted on GitHub Pages by GitHub, Inc. When you open a page, GitHub logs your IP address for security purposes
+under the <a href="https://docs.github.com/en/site-policy/privacy-policies/github-general-privacy-statement">GitHub General Privacy Statement</a>. We do not receive these logs.</p>
+<ul>
+  <li>No cookies, no analytics, no tracking pixels. Fonts and images are served from this site; no third-party resources are loaded.</li>
+  <li>The GiroCode generator runs entirely in your browser: what you type is never sent anywhere.</li>
+  <li>The download buttons link to the App Store and Google Play with the name of the page you came from (for example <code>ct=landing</code>), so the stores can count
+    which page sent visitors. That label contains no personal data; Apple and Google handle store visits under their own privacy policies.</li>
+</ul>
 </section>
 
 <section id="vi" lang="vi">
 <h1>Chính sách quyền riêng tư</h1>
-<p class="meta">Invoice cho iOS và Android · Cập nhật ngày 21/10/2026</p>
+<p class="meta">Invoice cho iOS và Android, và website này · Cập nhật ngày 27/10/2026</p>
 <div class="card">
 <p><strong>Tóm tắt:</strong> Hoạt động đầy đủ không cần tài khoản và chúng tôi không vận hành máy chủ nào cho ứng dụng: dữ liệu kinh doanh nằm trên thiết bị và không bao giờ được gửi cho chúng tôi.
 Nếu bạn chạm nút lấy tỷ giá, ứng dụng tải tỷ giá công khai từ một nguồn chính thức như Ngân hàng Trung ương châu Âu;
 yêu cầu đó chỉ chứa mã tiền tệ và ngày.
 Bản miễn phí hiển thị quảng cáo từ Google AdMob và đối tác; họ có thể dùng định danh quảng cáo của thiết bị theo lựa chọn đồng ý của bạn.
-Gói Pro do Apple hoặc Google xử lý thanh toán. Chúng tôi không dùng công cụ phân tích.</p>
+Các bên quảng cáo này cũng thu định danh, dữ liệu sử dụng và chẩn đoán để đo lường quảng cáo; bản thân ứng dụng không chạy công cụ phân tích nào.
+Gói Pro do Apple hoặc Google xử lý thanh toán. Website này không dùng cookie và không chạy công cụ phân tích (xem mục 11).</p>
 </div>
 
 <h2>Chúng tôi là ai</h2>
@@ -172,7 +181,7 @@ Invoice Pro không có và không yêu cầu quảng cáo.</p>
 
 <h2>6. Những điều chúng tôi không làm</h2>
 <ul>
-  <li>Không dùng dịch vụ phân tích hay báo lỗi, không theo dõi cách bạn dùng ứng dụng.</li>
+  <li>Không dùng dịch vụ phân tích hay báo lỗi của riêng mình. Ở bản miễn phí, các bên quảng cáo ở mục 4 đo lường quảng cáo và có thể dùng IDFA hoặc Advertising ID để theo dõi, chỉ khi bạn đồng ý ở nơi luật yêu cầu.</li>
   <li>Không bán dữ liệu bạn nhập hay chia sẻ với đối tác quảng cáo.</li>
   <li>Không thu thập dữ liệu trẻ em: ứng dụng là công cụ kinh doanh, không hướng tới trẻ em.</li>
 </ul>
@@ -195,7 +204,60 @@ File bạn xuất ra không còn lớp bảo vệ đó, vì vậy hãy chọn n�
 
 <h2>10. Thay đổi</h2>
 <p>Khi chính sách thay đổi, chúng tôi sẽ cập nhật trang này và ngày ở trên. Thay đổi quan trọng sẽ được ghi trong ghi chú phát hành của ứng dụng.</p>
+
+<h2>11. Website này</h2>
+<p>Website này (minhvblc.github.io/invoice) được GitHub, Inc. lưu trữ trên GitHub Pages. Khi bạn mở một trang, GitHub ghi lại địa chỉ IP của bạn vì mục đích bảo mật
+theo <a href="https://docs.github.com/en/site-policy/privacy-policies/github-general-privacy-statement">Tuyên bố quyền riêng tư của GitHub</a>. Chúng tôi không nhận các nhật ký này.</p>
+<ul>
+  <li>Không cookie, không công cụ phân tích, không pixel theo dõi. Font và ảnh được tải từ chính website này, không tải tài nguyên của bên thứ ba.</li>
+  <li>Trình tạo GiroCode chạy hoàn toàn trong trình duyệt: những gì bạn nhập không được gửi đi đâu.</li>
+  <li>Nút tải ứng dụng dẫn tới App Store và Google Play kèm tên trang bạn vừa xem (ví dụ <code>ct=landing</code>) để cửa hàng đếm được trang nào dẫn khách tới.
+    Nhãn đó không chứa dữ liệu cá nhân; Apple và Google xử lý lượt truy cập cửa hàng theo chính sách của họ.</li>
+</ul>
+</section>
+
+<section id="website-de" lang="de">
+<h1>Datenschutz für diese Website</h1>
+<p class="meta">minhvblc.github.io/invoice · Stand 27. Oktober 2026</p>
+<p>Verantwortlich: Nguyen Minh, <a href="mailto:ngducminhvblc@gmail.com">ngducminhvblc@gmail.com</a>. Diese Website wird von GitHub, Inc. über GitHub Pages bereitgestellt.
+Beim Aufruf einer Seite speichert GitHub deine IP-Adresse aus Sicherheitsgründen, siehe das <a href="https://docs.github.com/en/site-policy/privacy-policies/github-general-privacy-statement">GitHub General Privacy Statement</a>.
+Wir erhalten diese Protokolle nicht.</p>
+<ul>
+  <li>Keine Cookies, keine Analysetools, keine Tracking-Pixel. Schriften und Bilder kommen von dieser Website; es werden keine Inhalte Dritter geladen.</li>
+  <li>Der GiroCode-Generator läuft vollständig in deinem Browser; deine Eingaben werden nicht übertragen.</li>
+  <li>Die Download-Buttons verlinken auf den App Store und Google Play und hängen den Namen der Seite an (z. B. <code>ct=seo-de-kleinunternehmer</code>), damit die Stores zählen können,
+    über welche Seite Besucher kamen. Diese Kennung enthält keine personenbezogenen Daten.</li>
+</ul>
+<p>Für die App gilt die Datenschutzerklärung oben (auf Englisch und Vietnamesisch).</p>
+</section>
+
+<section id="website-fr" lang="fr">
+<h1>Confidentialité de ce site</h1>
+<p class="meta">minhvblc.github.io/invoice · Mis à jour le 27 octobre 2026</p>
+<p>Responsable : Nguyen Minh, <a href="mailto:ngducminhvblc@gmail.com">ngducminhvblc@gmail.com</a>. Ce site est hébergé par GitHub, Inc. sur GitHub Pages.
+Lorsque vous ouvrez une page, GitHub enregistre votre adresse IP à des fins de sécurité, voir la <a href="https://docs.github.com/en/site-policy/privacy-policies/github-general-privacy-statement">GitHub General Privacy Statement</a>.
+Nous ne recevons pas ces journaux.</p>
+<ul>
+  <li>Aucun cookie, aucun outil de mesure d'audience, aucun pixel de suivi. Les polices et les images sont servies par ce site ; aucune ressource tierce n'est chargée.</li>
+  <li>Les boutons de téléchargement mènent à l'App Store et à Google Play en ajoutant le nom de la page d'origine (par exemple <code>ct=seo-fr-auto-entrepreneur</code>),
+    pour que les stores comptent les visites par page. Ce libellé ne contient aucune donnée personnelle.</li>
+</ul>
+<p>Pour l'appli, la politique de confidentialité ci-dessus s'applique (en anglais et en vietnamien).</p>
 </section>
 </main>
+</div>
+<footer class="site">
+<div class="wrap">
+  <div class="cols">
+    <div><a class="brand" href="./"><img src="icon.png" alt="" width="32" height="32">Invoice</a>
+      <p class="about">Made by Nguyen Minh, an independent developer. Not tax or legal advice.</p></div>
+    <div><h2>App</h2><ul><li><a href="support.html">Support</a></li><li><a href="privacy.html">Privacy Policy</a></li><li><a href="terms.html">Terms of Use</a></li><li><a href="impressum.html" hreflang="de">Impressum</a></li>
+      <li><a href="mailto:ngducminhvblc@gmail.com">ngducminhvblc@gmail.com</a></li></ul></div>
+    <div><h2>Free tools &amp; guides</h2><ul><li><a href="de/girocode-erstellen.html" hreflang="de">GiroCode erstellen</a></li>
+      <li><a href="de/kleinunternehmer-rechnung.html" hreflang="de">Rechnung als Kleinunternehmer</a></li>
+      <li><a href="fr/facture-auto-entrepreneur.html" hreflang="fr">Facture auto-entrepreneur</a></li></ul></div>
+  </div>
+</div>
+</footer>
 </body>
 </html>

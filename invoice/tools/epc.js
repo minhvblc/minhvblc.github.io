@@ -7,6 +7,8 @@
   // ---- BankDetails ----
   var SEPA = ["AD","AT","BE","BG","CH","CY","CZ","DE","DK","EE","ES","FI","FR","GB","GI","GR","HR","HU","IE","IS","IT",
     "LI","LT","LU","LV","MC","MT","NL","NO","PL","PT","RO","SE","SI","SK","SM","VA"];
+  // Nước SEPA ngoài EEA: EPC069-12 (AT-23) vẫn bắt buộc BIC khi chuyển khoản tới đây.
+  var SEPA_NON_EEA = ["AD","CH","GB","GI","MC","SM","VA"];
   var IBAN_LENGTHS = { AD:24, AT:20, BE:16, BG:22, CH:21, CY:28, CZ:24, DE:22, DK:18, EE:20, ES:24, FI:18, FR:27, GB:22, GI:23,
     GR:27, HR:21, HU:28, IE:22, IS:26, IT:27, LI:21, LT:20, LU:20, LV:21, MC:27, MT:31, NL:18, NO:15, PL:28, PT:25, RO:24,
     SE:24, SI:19, SK:24, SM:27, VA:22 };
@@ -70,17 +72,18 @@
   /**
    * opts: { name, iban, bic, amountMinor (cent, có thể null = để trống), reference, autoRF }
    * autoRF = true: giống app (biến số chứng từ thành RF khi được). false: chỉ dùng RF khi người dùng đã nhập RF hợp lệ.
-   * Trả { ok: payload } hoặc { error: "epc.iban" | "epc.amount" | "epc.name" | "epc.tooLong" }.
+   * Trả { ok: payload } hoặc { error: "epc.iban" | "epc.bic" | "epc.amount" | "epc.name" | "epc.tooLong" }.
    */
   function build(opts) {
     if (!isSEPAIBAN(opts.iban || "")) return { error: "epc.iban" };
+    var bic = compact(opts.bic || "");
+    if (!isValidBIC(bic) && SEPA_NON_EEA.indexOf(compact(opts.iban).slice(0, 2)) >= 0) return { error: "epc.bic" };
     var minor = opts.amountMinor;
     if (minor != null && !(minor >= 1 && minor <= 99999999999)) return { error: "epc.amount" };
     var beneficiary = sepaText(opts.name || "").slice(0, 70).trim();
     if (!beneficiary) return { error: "epc.name" };
     var reference = opts.reference || "";
     var rf = opts.autoRF ? makeRF(reference) : (isValidRF(reference) ? compact(reference) : null);
-    var bic = compact(opts.bic || "");
     var lines = ["BCD", "002", "1", "SCT", isValidBIC(bic) ? bic : "", beneficiary, compact(opts.iban),
       minor == null ? "" : "EUR" + amountText(minor), "", rf || "", rf ? "" : sepaText(reference).slice(0, 140).trim()];
     while (lines.length && lines[lines.length - 1] === "") lines.pop();

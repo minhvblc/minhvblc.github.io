@@ -6,6 +6,8 @@
 <title>Invoice — quotes, invoices and deposits on iPhone, iPad and Android</title>
 <meta name="description" content="Send a quote, turn it into an invoice in one tap, record deposits and part payments, and see what each client still owes. Works offline, no account.">
 <meta name="campaign" content="landing">
+<meta name="theme-color" content="#F5F5F2" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#0C0D0D" media="(prefers-color-scheme: dark)">
 <link rel="canonical" href="https://minhvblc.github.io/invoice/">
 <meta property="og:type" content="website">
 <meta property="og:title" content="Invoice — quotes, invoices and deposits">
@@ -14,6 +16,7 @@
 <meta property="og:image" content="https://minhvblc.github.io/invoice/img/01-overview.jpg">
 <link rel="icon" href="icon.png">
 <link rel="apple-touch-icon" href="icon.png">
+<link rel="preload" href="fonts/geist-700.ttf" as="font" type="font/ttf" crossorigin>
 <link rel="stylesheet" href="site.css">
 <script type="application/ld+json">
 {
@@ -28,135 +31,167 @@
 </script>
 </head>
 <body>
+<a class="pdf-notice" href="#made-with"><span>RECEIVED A PDF?</span>Got a document that says “Made with Invoice”? Here is what it means →</a>
+
 <div class="wrap">
 <header class="top">
-  <a class="brand" href="./"><img src="icon.png" alt="">Invoice</a>
-  <nav><a href="#features">Features</a><a href="#pricing">Free &amp; Pro</a><a href="#made-with">Received a PDF?</a><a href="support.html">Support</a></nav>
+  <a class="brand" href="./"><img src="icon.png" alt="" width="32" height="32">Invoice</a>
+  <nav aria-label="Main">
+    <a href="#features">Features</a><a href="#pricing">Free &amp; Pro</a><a href="#made-with">Received a PDF?</a><a class="keep" href="support.html">Support</a>
+    <a class="pill" href="#get">Download</a>
+  </nav>
 </header>
 
+<main>
 <div class="hero">
+  <div class="pitch">
+    <p class="eyebrow">For freelancers &amp; small service businesses</p>
+    <h1 class="display">Quote.<br>Invoice.<br>Deposit.<br><em>Paid.</em></h1>
+    <p class="lead">Send a quote, turn it into an invoice in one tap, record deposits and part payments, and always know what each client still owes.</p>
+    <div class="store-buttons" id="get">
+      <a class="store-btn primary" data-store="ios" href="https://apps.apple.com/app/apple-store/id6825215204?mt=8&amp;ct=landing">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3v12m0 0-5-5m5 5 5-5M5 21h14"/></svg>
+        <span><span class="sub">Download on the</span><span class="main">App Store</span></span></a>
+      <a class="store-btn secondary" data-store="android" href="https://play.google.com/store/apps/details?id=com.minh.invoice&amp;referrer=utm_source%3Dlanding%26utm_medium%3Dweb%26utm_campaign%3Dlanding">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3v12m0 0-5-5m5 5 5-5M5 21h14"/></svg>
+        <span><span class="sub">Get it on</span><span class="main">Google Play</span></span></a>
+    </div>
+    <p class="microcopy">FREE TO START · NO ACCOUNT · WORKS OFFLINE</p>
+  </div>
+  <div class="hero-art" aria-hidden="true">
+    <div class="phone"><img src="img/screen-overview.jpg" width="576" height="1248" alt=""></div>
+    <div class="chip"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M8 3 4 7l4 4M4 7h16M16 21l4-4-4-4M20 17H4"/></svg>Quote → invoice</div>
+    <div class="ledger">
+      <div class="head"><span class="num">INV-2026-0014</span><span class="status">Partially paid</span></div>
+      <div class="client">Harbor &amp; Twine Co.</div>
+      <hr>
+      <div class="row" style="--d:.55s"><span>Quote accepted</span><b>$4,800.00</b></div>
+      <div class="row" style="--d:.7s"><span>Deposit · 40%</span><b class="in">−$1,920.00</b></div>
+      <div class="row" style="--d:.85s"><span>Part payment</span><b class="in">−$1,000.00</b></div>
+      <hr>
+      <div class="balance" style="--d:1s"><span>Balance due</span><b>$1,880.00</b></div>
+      <div class="paid-bar"><span></span></div>
+      <div class="caption">61% PAID · DUE OCT 31</div>
+    </div>
+  </div>
+</div>
+
+<ol class="steps">
+  <li><span class="idx">01</span><h3>Quote</h3><p>Build it from saved clients and services, then share a clean PDF.</p></li>
+  <li><span class="idx">02</span><h3>Invoice</h3><p>Client said yes? Convert the quote in one tap — same items, discount and tax.</p></li>
+  <li><span class="idx">03</span><h3>Deposit</h3><p>Record a deposit or part payment the moment the money lands.</p></li>
+  <li><span class="idx">04</span><h3>Paid</h3><p>Watch the balance reach zero. Overdue invoices are flagged for you.</p></li>
+</ol>
+</main>
+</div>
+
+<section id="features" class="on-forest forest-section">
+<div class="wrap">
+  <div class="intro">
+    <h2>Everything between “here’s my price” and “thanks, paid”.</h2>
+    <p class="aside">One app for the whole money trail of a job. No account, no server — it all stays on your phone.</p>
+  </div>
+  <ul class="screens">
+    <li><div class="phone"><img src="img/screen-convert.jpg" width="576" height="1248" loading="lazy" alt="An accepted quote with a Convert to invoice button"></div><span class="cap">Convert a quote</span></li>
+    <li><div class="phone"><img src="img/screen-payment.jpg" width="576" height="1248" loading="lazy" alt="Recording a payment against an invoice"></div><span class="cap">Record a deposit</span></li>
+    <li><div class="phone"><img src="img/screen-detail.jpg" width="576" height="1248" loading="lazy" alt="An overdue, partially paid invoice with its balance due"></div><span class="cap">Track the balance</span></li>
+    <li><div class="phone"><img src="img/screen-documents.jpg" width="576" height="1248" loading="lazy" alt="List of invoices with their status"></div><span class="cap">Every document, one list</span></li>
+  </ul>
+  <div class="groups">
+    <div class="group"><span class="kicker">Quotes → invoices</span><h3>Quotes become invoices</h3>
+      <ul><li>Create a quote in seconds from saved clients and services</li><li>Client says yes? Convert it to an invoice in one tap</li>
+        <li>Numbers are assigned automatically and never reused</li><li>Discounts and tax rates per document</li></ul></div>
+    <div class="group"><span class="kicker">Deposits &amp; balances</span><h3>Know what is still owed</h3>
+      <ul><li>Record deposits and part payments; reverse one if you made a mistake</li><li>Outstanding and overdue at a glance, per currency</li>
+        <li>Fix a sent invoice with a credit note, not a silent edit</li></ul></div>
+    <div class="group"><span class="kicker">PDF</span><h3>Country details on your PDFs</h3>
+      <ul><li>Tax IDs, small-business and reverse-charge notices and invoice numbering for the countries below</li>
+        <li>Documents in English, German, French, Spanish, Dutch or Vietnamese; A4 or Letter</li><li>Your logo, business details, payment details and page numbers</li></ul></div>
+    <div class="group"><span class="kicker">Privacy</span><h3>Your data stays on your device</h3>
+      <ul><li>No account, no sign-up, works offline</li><li>Quotes, invoices and clients are stored on your phone or tablet — the app has no server</li>
+        <li>Back up to a file you keep; restore it on a new iPhone, iPad or Android phone</li></ul></div>
+  </div>
+  <div class="countries"><span class="kicker">Country details for</span>
+    <span class="cc" title="United States">US</span><span class="cc" title="Canada">CA</span><span class="cc" title="United Kingdom">GB</span><span class="cc" title="Germany">DE</span><span class="cc" title="Austria">AT</span>
+    <span class="cc" title="Switzerland">CH</span><span class="cc" title="France">FR</span><span class="cc" title="Netherlands">NL</span><span class="cc" title="Belgium">BE</span><span class="cc" title="Vietnam">VN</span></div>
+</div>
+</section>
+
+<div class="wrap">
+<section id="pricing" class="pricing">
   <div>
-    <h1>Quote. Invoice. Deposit. Paid.</h1>
-    <p class="lead">Invoice helps freelancers, self-employed people and small service businesses get paid: send a quote, turn it into an invoice in one tap,
-      record deposits and part payments, and always know what each client still owes.</p>
-    <div class="cta">
-      <a class="btn primary" data-store="ios" href="https://apps.apple.com/app/apple-store/id6825215204?mt=8&amp;ct=landing">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3v12m0 0l-5-5m5 5l5-5M5 21h14"/></svg>
-        <span><span class="sub">Download for</span><span class="main">iPhone &amp; iPad</span></span></a>
-      <a class="btn secondary" data-store="android" href="https://play.google.com/store/apps/details?id=com.minh.invoice&amp;referrer=utm_source%3Dlanding%26utm_medium%3Dweb%26utm_campaign%3Dlanding">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3v12m0 0l-5-5m5 5l5-5M5 21h14"/></svg>
-        <span><span class="sub">Get it for</span><span class="main">Android</span></span></a>
-    </div>
-    <p class="muted small">Free to start · No account, no sign-up · Works offline</p>
+    <span class="kicker">Free &amp; Pro</span>
+    <h2>Free to start.<br>Pro when work picks up.</h2>
+    <p class="note">Invoice Pro is an auto-renewing subscription, billed weekly, monthly or yearly through the App Store or Google Play.
+      Weekly and yearly plans start with a free trial for eligible new subscribers. The price for your country is shown in the app before you subscribe.</p>
   </div>
-  <img class="shot" src="img/01-overview.jpg" width="560" height="1216" alt="Invoice overview screen: outstanding balance, open and overdue invoices, and clients that need attention">
-</div>
-</div>
-
-<section id="features">
-<div class="wrap">
-  <h2>Everything between “here’s my price” and “thanks, paid”</h2>
-  <div class="shots" role="list">
-    <img role="listitem" src="img/04-convert-quote.jpg" width="560" height="1216" loading="lazy" alt="An accepted quote with a Convert to invoice button">
-    <img role="listitem" src="img/05-payments.jpg" width="560" height="1216" loading="lazy" alt="An invoice with a 40% deposit recorded and the balance due">
-    <img role="listitem" src="img/06-pdf.jpg" width="560" height="1216" loading="lazy" alt="PDF preview with Classic, Modern and Minimal templates and accent colours">
-    <img role="listitem" src="img/02-documents.jpg" width="560" height="1216" loading="lazy" alt="List of quotes and invoices with their status">
-    <img role="listitem" src="img/03-editor.jpg" width="560" height="1216" loading="lazy" alt="Document editor with client, items, discount and tax">
-  </div>
-  <div class="grid" style="margin-top:24px">
-    <div class="card">
-      <h3>Quotes to invoices</h3>
-      <ul>
-        <li>Create a quote in seconds from saved clients and services</li>
-        <li>Client says yes? Convert it to an invoice in one tap</li>
-        <li>Numbers are assigned automatically and never reused</li>
-        <li>Discounts and tax rates per document</li>
-      </ul>
-    </div>
-    <div class="card">
-      <h3>Deposits and balances</h3>
-      <ul>
-        <li>Record deposits and part payments; reverse one if you made a mistake</li>
-        <li>Outstanding and overdue at a glance, per currency</li>
-        <li>Fix a sent invoice with a credit note, not a silent edit</li>
-      </ul>
-    </div>
-    <div class="card">
-      <h3>PDFs that follow your country</h3>
-      <ul>
-        <li>The tax IDs, notices and numbering the seller’s country expects — for the US, Canada, the UK, Germany, Austria, Switzerland, France, the Netherlands, Belgium and Vietnam</li>
-        <li>Documents in English, German, French, Spanish, Dutch or Vietnamese; A4 or Letter</li>
-        <li>Your logo, business details, payment details and page numbers</li>
-      </ul>
-    </div>
-    <div class="card">
-      <h3>Your data stays on your device</h3>
-      <ul>
-        <li>No account, no sign-up, works offline</li>
-        <li>Quotes, invoices and clients are stored on your phone or tablet — the app has no server</li>
-        <li>Back up to a file you keep; restore it on a new iPhone, iPad or Android phone</li>
-      </ul>
-    </div>
-  </div>
-</div>
-</section>
-
-<section id="pricing">
-<div class="wrap narrow">
-  <h2>Free and Pro</h2>
   <table class="plans">
-    <tr><th></th><th>Free</th><th>Invoice Pro</th></tr>
-    <tr><td>Quotes, clients, payments, backups</td><td>Unlimited</td><td>Unlimited</td></tr>
-    <tr><td>Invoices</td><td>3 in total</td><td>Unlimited</td></tr>
-    <tr><td>PDF templates</td><td>Classic</td><td>Classic, Modern, Minimal, DIN 5008</td></tr>
-    <tr><td>Your accent colour on PDFs</td><td>—</td><td class="check">✓</td></tr>
-    <tr><td>Payment QR codes (EPC/GiroCode for SEPA euro transfers, Swiss QR-bill)</td><td>—</td><td class="check">✓</td></tr>
-    <tr><td>Small “Made with Invoice” line in the PDF footer</td><td>Yes</td><td>No</td></tr>
-    <tr><td>Ads</td><td>Yes</td><td>No</td></tr>
+    <thead><tr><th scope="col"><span class="visually-hidden">Feature</span></th><th scope="col">Free</th><th scope="col" class="pro">Invoice Pro</th></tr></thead>
+    <tbody>
+      <tr><th scope="row">Quotes, clients, payments, backups</th><td>Unlimited</td><td class="pro">Unlimited</td></tr>
+      <tr><th scope="row">Invoices</th><td>3 in total</td><td class="pro">Unlimited</td></tr>
+      <tr><th scope="row">PDF templates</th><td>Classic</td><td class="pro">Classic, Modern, Minimal, DIN 5008</td></tr>
+      <tr><th scope="row">Your accent colour on PDFs</th><td class="none">—</td><td class="pro yes">✓</td></tr>
+      <tr><th scope="row">Payment QR codes (GiroCode for SEPA euro transfers, Swiss QR-bill)</th><td class="none">—</td><td class="pro yes">✓</td></tr>
+      <tr><th scope="row">“Made with Invoice” line in the PDF footer</th><td>Yes</td><td class="pro">No</td></tr>
+      <tr><th scope="row">Ads</th><td>Yes</td><td class="pro">No</td></tr>
+    </tbody>
   </table>
-  <p class="muted small" style="margin-top:12px">Invoice Pro is an auto-renewing subscription, billed weekly, monthly or yearly through the App Store or Google Play.
-    Weekly and yearly plans start with a free trial for eligible new subscribers. The price for your country is shown in the app before you subscribe.</p>
-</div>
 </section>
 
-<section id="made-with">
-<div class="wrap narrow">
-  <div class="callout">
-    <h2>Received a PDF that says “Made with Invoice”?</h2>
-    <p>The sender created that quote or invoice with this app on their own phone. We never see or store the documents people send,
-      so for anything about the amount, payment details or due date, please contact the sender directly.</p>
-    <p>Want to send documents like it yourself? Invoice is free to start on <a data-store="ios" href="https://apps.apple.com/app/apple-store/id6825215204?mt=8&amp;ct=landing">iPhone and iPad</a>
-      and <a data-store="android" href="https://play.google.com/store/apps/details?id=com.minh.invoice&amp;referrer=utm_source%3Dlanding%26utm_medium%3Dweb%26utm_campaign%3Dlanding">Android</a>.</p>
+<section id="made-with" class="made-with">
+  <div class="panel">
+    <div>
+      <span class="kicker">Received a PDF?</span>
+      <h2>Got a quote or invoice that says “Made with Invoice”?</h2>
+      <p>The sender made it with this app on their own phone. We never see or store the documents people send — for the amount, payment details or due date, please contact the sender directly.</p>
+      <p>Want to send documents like it? Invoice is free to start on <a data-store="ios" href="https://apps.apple.com/app/apple-store/id6825215204?mt=8&amp;ct=landing">iPhone and iPad</a>
+        and <a data-store="android" href="https://play.google.com/store/apps/details?id=com.minh.invoice&amp;referrer=utm_source%3Dlanding%26utm_medium%3Dweb%26utm_campaign%3Dlanding">Android</a>.</p>
+    </div>
+    <div class="pdf-frag" aria-label="The bottom of a free-plan PDF: totals, then the footer line “Made with Invoice · minhvblc.github.io/invoice”">
+      <div class="r"><span>Subtotal</span><b>$4,800.00</b></div>
+      <div class="r"><span>Deposit received</span><b>−$1,920.00</b></div>
+      <div class="r total"><span>Balance due</span><b>$2,880.00</b></div>
+      <div class="foot"><mark>Made with Invoice · minhvblc.github.io/invoice</mark><span>Page 1 of 1</span></div>
+    </div>
   </div>
-</div>
 </section>
 
-<section id="limits">
-<div class="wrap narrow">
-  <h2>Good to know before you start</h2>
-  <p>Invoice prepares documents from the information you enter. It does not send them to a tax authority and is not a certified e-invoicing system,
-    so check whether your country requires one.</p>
-  <div class="note">
-    <p><strong>Where the app can’t issue invoices.</strong> Invoice cannot issue invoices or credit notes for sellers based in Spain, Italy, Portugal, Romania, Hungary,
-      Mexico, Brazil, Argentina, Chile, Colombia, Peru, Ecuador, Uruguay or Costa Rica. The same applies to business-to-business invoices from sellers in Poland,
-      Croatia or Greece, and to invoices from VAT-registered sellers in Belgium to Belgian business clients. In these cases the law requires an official or certified
-      e-invoicing system.</p>
-    <p style="margin:0">You can still create quotes and pro formas there and issue the invoice itself in an official tool. Deposits, payments and client balances only work
-      with invoices issued in the app.</p>
+<section id="limits" class="limits">
+  <div>
+    <h2>Good to know before you start</h2>
+    <p class="body">Invoice prepares documents from the information you enter. It does not send them to a tax authority and is not a certified e-invoicing system,
+      so check whether your country requires one.</p>
   </div>
-  <p class="muted small" style="margin-top:12px">The free plan shows ads from Google AdMob and partner networks, which collect device identifiers, approximate location,
-    usage and diagnostic data to show and measure ads (the app asks for consent where required). They never receive your quotes, invoices or client details.
-    Details in the <a href="privacy.html">Privacy Policy</a>.</p>
-</div>
+  <div>
+    <div class="warn">
+      <h3><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m21.7 18-8-14a2 2 0 0 0-3.4 0l-8 14A2 2 0 0 0 4 21h16a2 2 0 0 0 1.7-3ZM12 9v4M12 17h.01"/></svg>Where the app can’t issue invoices</h3>
+      <p>Invoice cannot issue invoices or credit notes for sellers based in Spain, Italy, Portugal, Romania, Hungary, Mexico, Brazil, Argentina, Chile, Colombia,
+        Peru, Ecuador, Uruguay or Costa Rica. The same applies to business-to-business invoices from sellers in Poland, Croatia or Greece, and to invoices from
+        VAT-registered sellers in Belgium to Belgian business clients. In these cases an official or certified invoicing system is required.</p>
+      <p>You can still create quotes and pro formas there and issue the invoice itself in an official tool. Deposits, payments and client balances only work
+        with invoices issued in the app.</p>
+    </div>
+    <p class="fineprint">The free plan shows ads from Google AdMob and partner networks, which collect device identifiers, approximate location,
+      usage and diagnostic data to show and measure ads (the app asks for consent where required). They never receive your quotes, invoices or client details.
+      Details in the <a href="privacy.html">Privacy Policy</a>.</p>
+  </div>
 </section>
+</div>
 
-<div class="wrap">
 <footer class="site">
-  <nav><a href="support.html">Support</a><a href="privacy.html">Privacy Policy</a><a href="terms.html">Terms of Use</a><a href="mailto:ngducminhvblc@gmail.com">ngducminhvblc@gmail.com</a></nav>
-  <nav><span>Free tools &amp; guides:</span><a href="de/girocode-erstellen.html" hreflang="de">GiroCode erstellen</a><a href="de/kleinunternehmer-rechnung.html" hreflang="de">Rechnung als Kleinunternehmer</a><a href="fr/facture-auto-entrepreneur.html" hreflang="fr">Facture auto-entrepreneur</a></nav>
-  <p>Invoice is made by Nguyen Minh, an independent developer. Not tax or legal advice.</p>
-</footer>
+<div class="wrap">
+  <div class="cols">
+    <div><a class="brand" href="./"><img src="icon.png" alt="" width="32" height="32">Invoice</a>
+      <p class="about">Made by Nguyen Minh, an independent developer. Not tax or legal advice.</p></div>
+    <div><h2>App</h2><ul><li><a href="support.html">Support</a></li><li><a href="privacy.html">Privacy Policy</a></li><li><a href="terms.html">Terms of Use</a></li><li><a href="impressum.html" hreflang="de">Impressum</a></li>
+      <li><a href="mailto:ngducminhvblc@gmail.com">ngducminhvblc@gmail.com</a></li></ul></div>
+    <div><h2>Free tools &amp; guides</h2><ul><li><a href="de/girocode-erstellen.html" hreflang="de">GiroCode erstellen</a></li>
+      <li><a href="de/kleinunternehmer-rechnung.html" hreflang="de">Rechnung als Kleinunternehmer</a></li>
+      <li><a href="fr/facture-auto-entrepreneur.html" hreflang="fr">Facture auto-entrepreneur</a></li></ul></div>
+  </div>
 </div>
+</footer>
 <script src="store-links.js"></script>
 </body>
 </html>

@@ -3,104 +3,133 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>GiroCode erstellen – kostenloser EPC-QR-Code-Generator für SEPA-Überweisungen</title>
-<meta name="description" content="GiroCode (EPC-QR-Code) kostenlos erstellen: Empfänger, IBAN, Betrag und Verwendungszweck eingeben, QR-Code als PNG oder SVG herunterladen. Läuft komplett im Browser – nichts wird gesendet.">
+<title>GiroCode erstellen – kostenloser EPC-QR-Generator</title>
+<meta name="description" content="GiroCode (EPC-QR-Code) kostenlos erstellen: IBAN, Betrag und Verwendungszweck eingeben, als PNG oder SVG laden. Läuft nur im Browser, nichts wird gesendet.">
 <meta name="campaign" content="tool-de-girocode">
+<meta name="theme-color" content="#F5F5F2" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#0C0D0D" media="(prefers-color-scheme: dark)">
 <link rel="canonical" href="https://minhvblc.github.io/invoice/de/girocode-erstellen.html">
 <meta property="og:type" content="website">
 <meta property="og:title" content="GiroCode erstellen – kostenlos, im Browser">
 <meta property="og:description" content="EPC-QR-Code für SEPA-Überweisungen erstellen und als PNG oder SVG herunterladen.">
 <meta property="og:url" content="https://minhvblc.github.io/invoice/de/girocode-erstellen.html">
 <link rel="icon" href="../icon.png">
+<link rel="preload" href="../fonts/geist-700.ttf" as="font" type="font/ttf" crossorigin>
 <link rel="stylesheet" href="../site.css">
-<style>
-  .tool { display:grid; grid-template-columns:1fr 300px; gap:24px; align-items:start; }
-  .qrbox { text-align:center; }
-  .qrbox #qr { background:#fff; border-radius:14px; padding:8px; border:1px solid var(--line); display:inline-block; line-height:0; }
-  .qrbox #qr svg { width:260px; height:260px; }
-  .qrbox .empty { width:260px; height:260px; display:flex; align-items:center; justify-content:center; color:#777; font-size:14px; padding:24px; line-height:1.4; }
-  .err { color:#B3261E; font-size:14px; min-height:20px; margin:4px 0 0; }
-  @media (prefers-color-scheme: dark) { .err { color:#F2B8B5; } }
-  pre { background:var(--surface); border:1px solid var(--line); border-radius:10px; padding:10px 12px; font-size:13px; overflow-x:auto; text-align:left; }
-  .hint { font-size:13px; color:var(--muted); margin:4px 0 0; }
-  @media (max-width:760px) { .tool { grid-template-columns:1fr; } }
-</style>
 </head>
 <body>
-<div class="wrap narrow">
+<div class="wrap">
 <header class="top">
-  <a class="brand" href="../"><img src="../icon.png" alt="">Invoice</a>
-  <nav><a href="#generator">Generator</a><a href="#was-ist">Was ist ein GiroCode?</a><a href="#app">Auf jeder Rechnung</a></nav>
+  <a class="brand" href="../"><img src="../icon.png" alt="" width="32" height="32">Invoice</a>
+  <nav aria-label="Hauptmenü">
+    <a href="../#features">Funktionen</a><a href="kleinunternehmer-rechnung.html">Kleinunternehmer-Rechnung</a><a class="keep" href="../support.html">Support</a>
+    <a class="pill" href="#app">App laden</a>
+  </nav>
 </header>
 
-<h1>GiroCode erstellen</h1>
-<p class="lead">Ein QR-Code für SEPA-Überweisungen in Euro: Dein Kunde scannt ihn mit seiner Banking-App, Empfänger, IBAN, Betrag und Verwendungszweck sind schon ausgefüllt.</p>
-<p class="muted small">Kostenlos, ohne Anmeldung. Läuft komplett in deinem Browser – deine Daten werden nirgendwohin gesendet.</p>
+<main>
+<div class="tool-head">
+  <div>
+    <p class="crumb">Kostenloses Werkzeug · EPC069-12</p>
+    <h1 class="display-2">GiroCode erstellen</h1>
+    <p class="lead">Ein QR-Code für SEPA-Überweisungen in Euro: Dein Kunde scannt ihn mit seiner Banking-App – Empfänger, IBAN, Betrag und Verwendungszweck sind schon ausgefüllt.</p>
+  </div>
+  <div class="privacy-note">
+    <b><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10Z"/><path d="m9 12 2 2 4-4"/></svg>Läuft nur in deinem Browser</b>
+    Kostenlos, ohne Anmeldung. Deine Eingaben werden nirgendwohin gesendet.
+  </div>
+</div>
 
-<section id="generator" style="padding-top:24px">
-<div class="tool">
+<section id="generator" class="workbench" aria-label="GiroCode-Generator">
   <form id="form" autocomplete="off" onsubmit="return false">
-    <label for="name">Empfänger (Kontoinhaber)</label>
-    <input id="name" maxlength="70" placeholder="z. B. Holzwerkstatt Lindner">
-    <label for="iban">IBAN</label>
-    <input id="iban" inputmode="text" spellcheck="false" placeholder="DE89 3704 0044 0532 0130 00">
-    <div class="row">
-      <div>
-        <label for="bic">BIC <span class="muted" style="font-weight:400">(optional)</span></label>
-        <input id="bic" spellcheck="false" placeholder="COBADEFFXXX">
-      </div>
-      <div>
-        <label for="amount">Betrag in € <span class="muted" style="font-weight:400">(optional)</span></label>
-        <input id="amount" inputmode="decimal" placeholder="1.570,00">
-      </div>
+    <noscript><p class="err">Der GiroCode-Generator braucht JavaScript – er läuft komplett in deinem Browser und sendet nichts.</p></noscript>
+    <div class="field"><label for="name">Empfänger (Kontoinhaber)</label>
+      <input id="name" maxlength="70" placeholder="z. B. Holzwerkstatt Lindner"></div>
+    <div class="field"><label for="iban">IBAN</label>
+      <input id="iban" class="mono" inputmode="text" spellcheck="false" placeholder="DE89 3704 0044 0532 0130 00"></div>
+    <div class="field-row">
+      <div class="field"><label for="bic">BIC <span class="opt">optional im EWR</span></label>
+        <input id="bic" class="mono" spellcheck="false" placeholder="COBADEFFXXX"></div>
+      <div class="field"><label for="amount">Betrag in € <span class="opt">optional</span></label>
+        <input id="amount" class="mono" inputmode="decimal" placeholder="1.570,00"></div>
     </div>
-    <label for="ref">Verwendungszweck oder RF-Referenz</label>
-    <input id="ref" maxlength="140" placeholder="z. B. Rechnung INV-2026-000001">
+    <div class="field"><label for="ref">Verwendungszweck oder RF-Referenz</label>
+      <input id="ref" class="mono" maxlength="140" placeholder="z. B. Rechnung INV-2026-000001"></div>
     <p class="hint">Eine gültige RF-Referenz (z. B. RF18 5390 0754 7034) wird als strukturierte Referenz übertragen, alles andere als Verwendungszweck (max. 140 Zeichen).
       Umlaute und Sonderzeichen werden für alle Banken lesbar umgeschrieben (ä → a, ß → ss).</p>
     <p class="err" id="err" role="alert"></p>
   </form>
-  <div class="qrbox">
-    <div id="qr"><div class="empty">Gib Empfänger und IBAN ein, dann erscheint hier der GiroCode.</div></div>
-    <div class="cta" style="justify-content:center; margin:14px 0 6px">
-      <button class="btn secondary" type="button" id="png" disabled>PNG</button>
-      <button class="btn secondary" type="button" id="svg" disabled>SVG</button>
+  <div class="preview">
+    <span class="kicker">Vorschau</span>
+    <div class="qr-card">
+      <div id="qr"><div class="empty">Gib Empfänger und IBAN ein, dann erscheint hier der GiroCode.</div></div>
+      <p class="under">Mit der Banking-App scannen</p>
     </div>
-    <details><summary class="small">Inhalt des Codes</summary><pre id="payload"></pre></details>
+    <div class="buttons">
+      <button class="btn primary" type="button" id="png" disabled><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3v12m0 0-5-5m5 5 5-5M5 21h14"/></svg>PNG laden</button>
+      <button class="btn" type="button" id="svg" disabled><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3v12m0 0-5-5m5 5 5-5M5 21h14"/></svg>SVG laden</button>
+    </div>
+    <details><summary>Inhalt des Codes</summary><pre id="payload"></pre></details>
+  </div>
+</section>
+
+<section id="was-ist" class="explainer">
+  <div>
+    <h2>Was ist ein GiroCode?</h2>
+    <p>GiroCode ist der in Deutschland gebräuchliche Name für den <strong>EPC-QR-Code</strong> nach dem Standard EPC069-12 des European Payments Council.
+      Er enthält die Daten einer SEPA-Überweisung als Text: Empfänger, IBAN, je nach Land die BIC, Betrag und Verwendungszweck oder strukturierte Referenz.
+      Viele Banking-Apps in Deutschland, Österreich und anderen Euro-Ländern lesen ihn über „Scannen“ oder „Foto-Überweisung“.</p>
+  </div>
+  <div class="col"><span class="kicker">Nur Euro</span><h3>SEPA in EUR</h3><p>Der Code funktioniert ausschließlich für SEPA-Überweisungen in Euro.</p></div>
+  <div class="col"><span class="kicker">BIC</span><h3>Im EWR reicht die IBAN</h3><p>Für Konten in der Schweiz, im Vereinigten Königreich, in Monaco, San Marino, Andorra, Gibraltar und im Vatikan ist die BIC Pflicht.</p></div>
+  <div class="col"><span class="kicker">Vor dem Versand</span><h3>Selbst testen</h3><p>Die Banking-App zeigt alle Felder vor der Freigabe. Teste den Code mit deiner eigenen App, bevor du ihn verschickst.</p></div>
+</section>
+</main>
+</div>
+
+<section id="app" class="on-forest cta-band">
+<div class="wrap inner">
+  <div>
+    <span class="kicker">Mit Invoice Pro</span>
+    <h2>GiroCode automatisch auf jeder Rechnung</h2>
+    <ol>
+      <li>Angebot schreiben und mit einem Tippen in eine Rechnung umwandeln.</li>
+      <li>Mit Invoice Pro steht der GiroCode mit Betrag und Rechnungsnummer auf jeder Euro-Rechnung – für Konten in der Schweiz und in Liechtenstein die QR-Rechnung.</li>
+      <li>Anzahlungen erfassen und sehen, was jeder Kunde noch schuldet.</li>
+    </ol>
+    <p class="small" style="color:var(--on-forest-2); margin-top:18px">Offline und ohne Konto; deine Daten bleiben auf deinem Gerät.
+      Weiterlesen: <a href="kleinunternehmer-rechnung.html">Rechnung als Kleinunternehmer schreiben – Pflichtangaben + Muster</a></p>
+  </div>
+  <div class="store-buttons">
+    <a class="store-btn primary" data-store="ios" href="https://apps.apple.com/app/apple-store/id6825215204?mt=8&amp;ct=tool-de-girocode">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3v12m0 0-5-5m5 5 5-5M5 21h14"/></svg>
+      <span><span class="sub">Laden im</span><span class="main">App Store</span></span></a>
+    <a class="store-btn secondary" data-store="android" href="https://play.google.com/store/apps/details?id=com.minh.invoice&amp;referrer=utm_source%3Dtool-de-girocode%26utm_medium%3Dweb%26utm_campaign%3Dtool-de-girocode">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3v12m0 0-5-5m5 5 5-5M5 21h14"/></svg>
+      <span><span class="sub">Jetzt bei</span><span class="main">Google Play</span></span></a>
+    <p class="microcopy">KOSTENLOS STARTEN · OHNE KONTO · OFFLINE</p>
   </div>
 </div>
 </section>
 
-<section id="was-ist">
-  <h2>Was ist ein GiroCode?</h2>
-  <p>GiroCode ist der in Deutschland gebräuchliche Name für den <strong>EPC-QR-Code</strong> nach dem Standard EPC069-12 des European Payments Council.
-    Er enthält die Daten einer SEPA-Überweisung als Text: Empfänger, IBAN, optional BIC, Betrag und Verwendungszweck oder strukturierte Referenz.
-    Viele Banking-Apps in Deutschland, Österreich und anderen Euro-Ländern können ihn über die Funktion „Scannen“ oder „Foto-Überweisung“ lesen.</p>
-  <ul>
-    <li><strong>Nur Euro.</strong> Der Code funktioniert ausschließlich für SEPA-Überweisungen in EUR.</li>
-    <li><strong>BIC optional.</strong> Innerhalb des SEPA-Raums reicht die IBAN; dieser Generator lässt die BIC weg, wenn du keine gültige eingibst.</li>
-    <li><strong>Prüfen bleibt Sache des Zahlenden.</strong> Die Banking-App zeigt alle Felder vor der Freigabe an.</li>
-    <li><strong>Teste den Code</strong> mit deiner eigenen Banking-App, bevor du ihn verschickst.</li>
-  </ul>
-</section>
-
-<section id="app">
-  <h2>Den GiroCode automatisch auf jede Rechnung</h2>
-  <p>Mit <a href="../">Invoice</a> für iPhone, iPad und Android schreibst du Angebote, wandelst sie mit einem Tippen in Rechnungen um und erfasst Anzahlungen.
-    Mit Invoice Pro steht der GiroCode mit Betrag und Rechnungsnummer automatisch auf jeder Euro-Rechnung – für Konten in der Schweiz und in Liechtenstein die QR-Rechnung.
-    Offline, ohne Konto; deine Daten bleiben auf deinem Gerät.</p>
-  <div class="cta">
-    <a class="btn primary" data-store="ios" href="https://apps.apple.com/app/apple-store/id6825215204?mt=8&amp;ct=tool-de-girocode"><span><span class="sub">Laden für</span><span class="main">iPhone &amp; iPad</span></span></a>
-    <a class="btn secondary" data-store="android" href="https://play.google.com/store/apps/details?id=com.minh.invoice&amp;referrer=utm_source%3Dtool-de-girocode%26utm_medium%3Dweb%26utm_campaign%3Dtool-de-girocode"><span><span class="sub">Jetzt bei</span><span class="main">Google Play</span></span></a>
-  </div>
-  <p class="muted small">Weiterlesen: <a href="kleinunternehmer-rechnung.html">Rechnung als Kleinunternehmer schreiben – Pflichtangaben + Muster</a></p>
-</section>
+<div class="wrap">
+  <p class="sources">Stand: 27. Oktober 2026. „GiroCode“ steht hier als gebräuchliche Bezeichnung für den EPC-QR-Code; diese Seite steht in keiner Verbindung zu Banken oder zum
+    European Payments Council. Ohne Gewähr – keine Rechts- oder Steuerberatung.</p>
+</div>
 
 <footer class="site">
-  <nav><a href="../">Invoice</a><a href="../support.html">Support</a><a href="../privacy.html">Datenschutz</a><a href="../terms.html">Nutzungsbedingungen</a></nav>
-  <p>Stand: 27. Oktober 2026. „GiroCode“ steht hier als gebräuchliche Bezeichnung für den EPC-QR-Code; diese Seite steht in keiner Verbindung zu Banken oder zum European Payments Council. Ohne Gewähr – keine Rechts- oder Steuerberatung.</p>
-</footer>
+<div class="wrap">
+  <div class="cols">
+    <div><a class="brand" href="../"><img src="../icon.png" alt="" width="32" height="32">Invoice</a>
+      <p class="about">Eine App von Nguyen Minh, einem unabhängigen Entwickler. Keine Steuer- oder Rechtsberatung.</p></div>
+    <div><h2>App</h2><ul><li><a href="../">Startseite</a></li><li><a href="../support.html">Support</a></li><li><a href="../privacy.html#website-de">Datenschutz</a></li>
+      <li><a href="../terms.html">Nutzungsbedingungen</a></li><li><a href="../impressum.html" hreflang="de">Impressum</a></li></ul></div>
+    <div><h2>Kostenlose Werkzeuge</h2><ul><li><a href="girocode-erstellen.html">GiroCode erstellen</a></li>
+      <li><a href="kleinunternehmer-rechnung.html">Rechnung als Kleinunternehmer</a></li>
+      <li><a href="../fr/facture-auto-entrepreneur.html" hreflang="fr">Facture auto-entrepreneur</a></li></ul></div>
+  </div>
 </div>
+</footer>
 <script src="../tools/epc.js"></script>
 <script>
 (function () {
@@ -109,6 +138,7 @@
   var current = null;
   var MESSAGES = {
     "epc.iban": "Bitte eine gültige IBAN aus dem SEPA-Raum eingeben.",
+    "epc.bic": "Für Konten außerhalb des EWR (z. B. in der Schweiz oder im Vereinigten Königreich) ist die BIC erforderlich.",
     "epc.amount": "Der Betrag muss zwischen 0,01 € und 999.999.999,99 € liegen.",
     "amount.format": "Bitte den Betrag als Zahl eingeben, z. B. 1.570,00.",
     "epc.name": "Bitte den Empfänger eingeben.",
@@ -140,11 +170,11 @@
     var r = isNaN(minor) ? { error: "amount.format" }
       : E.build({ name: name, iban: iban, bic: $("bic").value, amountMinor: minor, reference: $("ref").value, autoRF: false });
     if (r.error) {
-      $("err").textContent = (r.error === "epc.iban" && !iban.trim()) ? "" : MESSAGES[r.error];
+      $("err").textContent = (r.error === "epc.iban" && !iban.trim()) ? "" : (MESSAGES[r.error] || "");
       $("qr").innerHTML = '<div class="empty">' + (MESSAGES[r.error] || "") + "</div>";
       return;
     }
-    if ($("bic").value.trim() && !E.isValidBIC($("bic").value)) $("err").textContent = "Die BIC ist ungültig und wird weggelassen – innerhalb des SEPA-Raums reicht die IBAN.";
+    if ($("bic").value.trim() && !E.isValidBIC($("bic").value)) $("err").textContent = "Die BIC ist ungültig und wird weggelassen – innerhalb des EWR reicht die IBAN.";
     else $("err").textContent = "";
     var qr = E.encodeQR(r.ok);
     current = { qr: qr, svg: E.toSVG(qr) };

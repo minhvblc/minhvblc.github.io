@@ -1,0 +1,236 @@
+<!doctype html>
+<html lang="de-CH">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>QR-Rechnung erstellen: Zahlteil, QR-IBAN und MWST</title>
+<meta name="description" content="QR-Rechnung in der Schweiz: was im Zahlteil steht, QR-IBAN oder IBAN, QR- und RF-Referenz und welche MWST-Angaben auf die Rechnung gehören.">
+<meta name="campaign" content="seo-ch-qr-rechnung">
+<meta name="theme-color" content="#F5F5F2" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#0C0D0D" media="(prefers-color-scheme: dark)">
+<link rel="canonical" href="https://minhvblc.github.io/invoice/ch/qr-rechnung.html">
+<meta property="og:type" content="article">
+<meta property="og:title" content="QR-Rechnung erstellen: Zahlteil, QR-IBAN und MWST">
+<meta property="og:description" content="Zahlteil und Empfangsschein, QR-IBAN oder IBAN, Referenzen und MWST-Angaben auf Schweizer Rechnungen.">
+<meta property="og:url" content="https://minhvblc.github.io/invoice/ch/qr-rechnung.html">
+<meta property="og:image" content="https://minhvblc.github.io/invoice/img/qr-rechnung.jpg">
+<link rel="icon" href="../icon.png">
+<link rel="preload" href="../fonts/geist-700.ttf" as="font" type="font/ttf" crossorigin>
+<link rel="stylesheet" href="../site.css">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "QR-Rechnung erstellen: Zahlteil, QR-IBAN und MWST-Angaben",
+  "inLanguage": "de-CH",
+  "dateModified": "2026-10-28",
+  "author": { "@type": "Person", "name": "Nguyen Minh" }
+}
+</script>
+</head>
+<body>
+<div class="wrap">
+<header class="top">
+  <a class="brand" href="../"><img src="../icon.png" alt="" width="32" height="32">Invoice</a>
+  <nav aria-label="Hauptmenü">
+    <a href="../#features">Funktionen</a><a href="#zahlteil">Zahlteil</a><a class="keep" href="../support.html">Support</a>
+    <a class="pill" href="#app">App laden</a>
+  </nav>
+</header>
+</div>
+
+<main>
+<div class="wrap">
+<header class="article-head">
+  <p class="crumb">Leitfaden · Schweiz · QR-Rechnung</p>
+  <h1 class="display-2">QR-Rechnung erstellen für Selbstständige und KMU</h1>
+  <p class="lead">Was im Zahlteil und im Empfangsschein steht, wann du eine QR-IBAN brauchst und wann eine normale IBAN reicht,
+    und welche MWST-Angaben auf eine Schweizer Rechnung gehören.</p>
+  <p class="meta"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="M12 16v-4M12 8h.01"/></svg>
+    Stand 28. Oktober 2026 · Keine Steuer- oder Rechtsberatung</p>
+</header>
+
+<div class="article">
+  <nav class="toc" aria-label="Inhalt">
+    <span class="kicker">Inhalt</span>
+    <ol><li><a href="#muster">Muster</a></li><li><a href="#qr-rechnung">Die QR-Rechnung</a></li><li><a href="#zahlteil">Zahlteil</a></li><li><a href="#qr-iban">QR-IBAN oder IBAN</a></li>
+      <li><a href="#pdf-papier">PDF oder Papier</a></li><li><a href="#mwst">MWST-Angaben</a></li><li><a href="#gut-zu-wissen">Gut zu wissen</a></li><li><a href="#app">Mit Invoice</a></li></ol>
+  </nav>
+
+  <aside class="sample" id="muster" aria-labelledby="muster-h">
+    <span class="kicker" id="muster-h">01 · Muster</span>
+    <a href="../samples/qr-rechnung-muster.pdf"><img src="../img/qr-rechnung.jpg" width="876" height="1240" loading="lazy"
+      alt="Muster einer QR-Rechnung, letzte Seite: Empfangsschein und Zahlteil mit Swiss QR Code, Konto / Zahlbar an mit QR-IBAN, QR-Referenz, Mitteilung „Rechnung INV-2026-000001“, Zahlbar durch Bergbahnen Beispiel AG und Betrag CHF 2 085.00"></a>
+    <p class="cap">Erstellt mit Invoice Pro, Vorlage „Minimal“ (Beispieldaten; die QR-IBAN stammt aus den Beispielen von SIX). Das Bild zeigt die letzte Seite mit Zahlteil und Empfangsschein, die Rechnung selbst steht im PDF auf Seite 1. Mit dem kostenlosen Plan gibt es keinen Zahlteil.</p>
+    <a class="btn-outline" href="../samples/qr-rechnung-muster.pdf" download>
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8zM14 2v6h6M12 18v-6M9 15l3 3 3-3"/></svg>
+      Muster als PDF (130 KB)</a>
+  </aside>
+
+  <div class="content">
+    <section id="qr-rechnung">
+      <h2><span class="n">02</span>Was die QR-Rechnung ist</h2>
+      <p>Die QR-Rechnung hat am 1. Oktober 2022 die roten und orangen Einzahlungsscheine endgültig abgelöst (<a href="https://www.six-group.com/de/products-services/banking-services/payment-standardization/standards/qr-bill.html">SIX</a>).
+        Sie besteht aus einem <strong>Zahlteil</strong> mit dem Swiss QR Code und einem <strong>Empfangsschein</strong> links daneben. Zusammen sitzen sie am unteren Rand einer A4-Seite:</p>
+      <div class="stats">
+        <div><b>148 × 105</b><span>mm Zahlteil (A6 quer)</span></div>
+        <div><b>62 × 105</b><span>mm Empfangsschein, zusammen 210 × 105 mm</span></div>
+      </div>
+    </section>
+
+    <section id="zahlteil">
+      <h2><span class="n">03</span>Was im Zahlteil steht</h2>
+      <p>Die Implementation Guidelines QR-Rechnung (IG) von SIX geben die Abschnitte und Überschriften vor; die Überschriften dürfen nicht verändert werden.
+        Aktuell gilt <a href="https://www.six-group.com/dam/download/banking-services/standardization/qr-bill/ig-qr-bill-v2.3-de.pdf">Version 2.3</a>.
+        Ab 14. November 2026 gilt zusätzlich <a href="https://www.six-group.com/dam/download/banking-services/standardization/qr-bill/ig-qr-bill-v2.4-de.pdf">Version 2.4</a>; bis November 2027 gelten beide parallel, danach nur noch 2.4. Für Rechnungen in CHF ändert sich damit technisch nichts.</p>
+      <ol class="check">
+        <li>Der Titel „Zahlteil“</li>
+        <li>Der Swiss QR Code mit dem Schweizerkreuz in der Mitte</li>
+        <li><strong>Währung</strong> und <strong>Betrag</strong>: nur CHF oder EUR, von 0.01 bis 999 999 999.99. Auf dem Zahlteil steht der Betrag mit Leerschlag als Tausendertrennzeichen, z.&nbsp;B. CHF 1 590.00.
+          Fehlt der Betrag im Code, wird ein leeres Feld von 40 × 15 mm zum Ausfüllen von Hand gedruckt.</li>
+        <li><strong>Konto / Zahlbar an</strong>: IBAN oder QR-IBAN, Name und Adresse des Zahlungsempfängers</li>
+        <li><strong>Referenz</strong>: QR-Referenz oder Creditor Reference (siehe unten), sofern eine verwendet wird</li>
+        <li><strong>Zusätzliche Informationen</strong>: Mitteilung und Rechnungsinformationen, zusammen höchstens 140 Zeichen</li>
+        <li><strong>Zahlbar durch</strong>: Name und Adresse der zahlenden Person. Fehlen sie im Code, steht dort „Zahlbar durch (Name/Adresse)“ über einem leeren Feld von mindestens 65 × 25 mm.</li>
+        <li>Weitere Informationen, z.&nbsp;B. zu alternativen Verfahren wie eBill</li>
+      </ol>
+      <p>Der <strong>Empfangsschein</strong> zeigt Konto / Zahlbar an, Referenz, Zahlbar durch, Währung, Betrag und die Annahmestelle, aber keine zusätzlichen Informationen.
+        Die Überschriften gibt es auf Deutsch, Französisch, Italienisch, Rätoromanisch und Englisch; du wählst die Sprache. Zugelassene Schriften sind Arial, Frutiger, Helvetica und Liberation Sans, in Schwarz.</p>
+      <p><strong>Adressen</strong> stehen im QR-Code strukturiert, also in getrennten Feldern für Strasse, Hausnummer, Postleitzahl, Ort und Land.
+        Postleitzahl, Ort und Land sind Pflicht, und die Angaben zum Zahlungsempfänger müssen zum Kontoinhaber bei der Bank passen.</p>
+    </section>
+
+    <section id="qr-iban">
+      <h2><span class="n">04</span>QR-IBAN oder normale IBAN?</h2>
+      <p>Welche Referenz auf die QR-Rechnung kommt, hängt vom Konto ab (IG 2.3 und 2.4, Abschnitte 2.8 bis 2.12):</p>
+      <div class="answers">
+        <div><div class="h"><span class="kicker">QR-IBAN</span></div>
+          <p>Erkennbar an der QR-IID 30000 bis 31999 an den Stellen 5 bis 9. Sie verlangt eine <strong>QR-Referenz</strong>: 27 Ziffern, davon 26 frei und eine Prüfziffer (Modulo 10 rekursiv), nicht nur Nullen.
+            Ab November 2027 sind QR-Rechnungen in Euro nur noch mit normaler IBAN möglich (mit RF-Referenz oder ohne Referenz); die QR-IBAN bleibt dann für CHF.</p></div>
+        <div><div class="h"><span class="kicker">IBAN</span></div>
+          <p>Funktioniert mit einer <strong>Creditor Reference</strong> nach ISO 11649 (beginnt mit RF, 5 bis 25 Zeichen) oder ganz ohne Referenz, nur mit einer Mitteilung.
+            Beides geht in CHF und in EUR.</p></div>
+      </div>
+    </section>
+
+    <section id="pdf-papier">
+      <h2><span class="n">05</span>PDF oder Papier?</h2>
+      <div class="answers">
+        <div><div class="h"><span class="kicker">PDF</span></div>
+          <p>Für E-Banking und Mobile Banking. Zahlteil und Empfangsschein werden mit Linien abgegrenzt, jeweils mit einem Scherensymbol oder dem Text „Vor der Einzahlung abzutrennen“.</p></div>
+        <div><div class="h"><span class="kicker">Papier</span></div>
+          <p>Weisses, perforiertes Papier mit 80 bis 100 g/m²; die Rückseite bleibt leer. Werbung auf Zahlteil und Empfangsschein ist nicht erlaubt.</p></div>
+      </div>
+      <p>SIX bietet ein Validierungsportal für den Swiss QR Code an. Banken können eine Prüfung verlangen, generell vorgeschrieben ist sie nicht.</p>
+    </section>
+
+    <section id="mwst">
+      <h2><span class="n">06</span>MWST-Angaben auf der Rechnung</h2>
+      <p>Ob überhaupt MWST auf deine Rechnung gehört, hängt davon ab, ob du im MWST-Register eingetragen bist:</p>
+      <div class="stats">
+        <div><b>CHF 100'000</b><span>Umsatz pro Jahr: darunter von der Steuerpflicht befreit (<a href="https://www.fedlex.admin.ch/eli/cc/2009/615/de#art_10">Art. 10 Abs. 2 lit. a MWSTG</a>)</span></div>
+        <div><b>8,1 %</b><span>Normalsatz; reduziert 2,6 %, Beherbergung 3,8 % (<a href="https://www.estv.admin.ch/de/mwst-steuersaetze-schweiz">ESTV</a>)</span></div>
+      </div>
+      <ul>
+        <li>Die Grenze bezieht sich auf den Umsatz aus nicht von der Steuer ausgenommenen Leistungen im In- und Ausland, ohne Steuer gerechnet. Auch darunter kannst du dich
+          <a href="https://www.estv.admin.ch/de/mwst-steuerpflicht">freiwillig eintragen</a> lassen, frühestens auf den Beginn der laufenden Steuerperiode.</li>
+        <li><strong>Nicht eingetragen:</strong> Nach <a href="https://www.fedlex.admin.ch/eli/cc/2009/615/de#art_27">Art. 27 MWSTG</a> darfst du in Rechnungen nicht auf die Steuer hinweisen.
+          Wer MWST ausweist, ohne dazu berechtigt zu sein, schuldet sie, ausser die Rechnung wird korrigiert oder du machst glaubhaft, dass dem Bund kein Steuerausfall entstanden ist.</li>
+        <li><strong>Eingetragen:</strong> Eine Rechnung mit allen Angaben nach Art. 26 Abs. 2 und 3 musst du ausstellen, wenn deine Kundin oder dein Kunde sie verlangt (Art. 26 Abs. 1).</li>
+      </ul>
+      <p>Eine solche Rechnung enthält nach <a href="https://www.fedlex.admin.ch/eli/cc/2009/615/de#art_26">Art. 26 Abs. 2 MWSTG</a> in der Regel:</p>
+      <ol class="check">
+        <li>Deinen Namen und Ort, wie du im Geschäftsverkehr auftrittst, den Hinweis auf die Eintragung im MWST-Register und deine MWST-Nummer</li>
+        <li>Name und Ort der Kundin oder des Kunden</li>
+        <li>Datum oder Zeitraum der Leistung, wenn es vom Rechnungsdatum abweicht</li>
+        <li>Art, Gegenstand und Umfang der Leistung</li>
+        <li>Das Entgelt</li>
+        <li>Den Steuersatz und den Steuerbetrag; ist die Steuer im Preis enthalten, genügt der Steuersatz</li>
+      </ol>
+      <p>Die MWST-Nummer ist deine UID mit dem Zusatz MWST (oder TVA bzw. IVA). Die englische Abkürzung VAT ist laut <a href="https://www.estv.admin.ch/de/unternehmens-identifikationsnummer-uid">ESTV</a> nicht erlaubt.</p>
+      <div class="quote"><span class="kicker">Format (Beispiel, keine echte Nummer)</span><p>CHE-123.456.789 MWST</p></div>
+      <p>Für die MWST werden Rechnungen auf Papier und elektronische Rechnungen wie PDF gleich behandelt (ESTV, MWST-Info 16).</p>
+    </section>
+
+    <section id="gut-zu-wissen">
+      <h2><span class="n">07</span>Gut zu wissen: was Invoice bei der QR-Rechnung macht und was nicht</h2>
+      <ul>
+        <li>Den Zahlteil gibt es nur auf einer <strong>ausgestellten Rechnung</strong> mit offenem Betrag, nicht auf Entwürfen, Offerten, Proforma-Rechnungen, Rechnungskorrekturen oder Stornorechnungen. In der Vorschau eines Entwurfs siehst du ihn deshalb noch nicht.</li>
+        <li>Der Zahlteil kommt nur mit einer Schweizer oder liechtensteinischen IBAN bzw. QR-IBAN und bei Rechnungen in CHF oder EUR. Bei anderen Konten oder Währungen fehlt er, ohne dass die App darauf hinweist.</li>
+        <li>Ohne Invoice Pro gibt es keinen Zahlteil. Nimm dann eine normale IBAN: Auf eine QR-IBAN können Zahlungen ohne QR-Referenz nicht eingehen (die App warnt dich davor).</li>
+        <li>Fehlen in deinem Unternehmensprofil Postleitzahl, Ort oder Land, lässt die App den Zahlteil weg und druckt die Rechnung ohne ihn. Füll die Adresse also vollständig aus.</li>
+        <li>Mit einer QR-IBAN baut die App die QR-Referenz aus den Ziffern der Rechnungsnummer. Eine Referenz, die dir deine Bank vorgibt, kannst du nicht eintragen.</li>
+        <li>Euro-Rechnungen auf eine QR-IBAN bekommen keinen Zahlteil; die App warnt vor dem Ausstellen. Sie wendet damit schon die Regel an, die ab November 2027 gilt. In Euro geht es mit einer normalen IBAN.</li>
+        <li>Der Betrag ist immer ausgefüllt. Ein leeres Betragsfeld, eBill, strukturierte Rechnungsinformationen und italienische oder rätoromanische Überschriften bietet die App nicht an.
+          Die Überschriften folgen der Dokumentsprache: Deutsch oder Französisch, bei allen anderen Sprachen Englisch.
+          Als Mitteilung stehen der Dokumenttitel und die Rechnungsnummer, z.&nbsp;B. „Rechnung …“ oder „Anzahlungsrechnung …“.</li>
+        <li>Ein bereits gesendetes PDF ändert sich nicht mehr: Der Betrag im Zahlteil bleibt der offene Betrag vom ersten Senden, auch wenn du danach Zahlungen erfasst.
+          Eine Rechnung, die du ohne Invoice Pro gesendet hast, bekommt auch nach dem Upgrade keinen Zahlteil.</li>
+        <li>Die App prüft den Code nicht im SIX-Validierungsportal und schickt nichts an eine Bank oder an die ESTV.</li>
+      </ul>
+    </section>
+  </div>
+</div>
+</div>
+
+<section id="app" class="on-forest cta-band">
+<div class="wrap inner">
+  <div>
+    <span class="kicker">08 · Mit Invoice</span>
+    <h2>QR-Rechnungen mit Invoice</h2>
+    <ol>
+      <li>In Einstellungen › Unternehmensprofil die Schweiz wählen, die Adresse in den getrennten Feldern (Strasse, Hausnr., Postleitzahl, Ort) eintragen und den Steuerstatus wählen:
+        „Für MWST registriert“ mit deiner UID oder „Nicht für MWST registriert“.</li>
+      <li>In Einstellungen › Bankkonten deine IBAN oder QR-IBAN erfassen. Mit Invoice Pro ist der Schalter „Zahlungs-QR-Code“ dort schon eingeschaltet.
+        Ohne Pro gibt es keinen Zahlteil; nimm dann eine normale IBAN.</li>
+      <li>Rechnung schreiben oder eine Offerte (in der App „Angebot“) umwandeln und ausstellen. Das PDF bekommt auf der letzten Seite Zahlteil und Empfangsschein; die Referenz setzt die App selbst
+        (QR-Referenz bei einer QR-IBAN, sonst wenn möglich eine RF-Referenz). Der Betrag ist der offene Betrag beim ersten Senden, also abzüglich der bis dahin erfassten Anzahlungen und Teilzahlungen; ein bereits gesendetes PDF ändert sich danach nicht.</li>
+    </ol>
+    <p class="small" style="color:var(--on-forest-2); margin-top:18px">Eingetragene Unternehmen wählen pro Position 8,1 %, 2,6 % oder 3,8 % MWST; das PDF zeigt Nettobetrag und MWST je Satz und die UID mit dem Zusatz MWST.
+      Ohne MWST-Eintragung lässt die App keine MWST zu und druckt keinen Befreiungshinweis. Offline und ohne Konto; deine Rechnungen bleiben auf deinem Gerät.
+      Kostenlos: unbegrenzt viele Offerten und insgesamt 3 Rechnungen, mit Werbung und einer kleinen „Made with Invoice“-Zeile im PDF, ohne QR-Rechnung.
+      Invoice Pro (Abo) schaltet unbegrenzt viele Rechnungen, die Vorlagen Modern und Minimal, eine eigene Akzentfarbe und die QR-Rechnung frei, ohne Werbung.</p>
+  </div>
+  <div class="store-buttons">
+    <a class="store-btn primary" data-store="ios" href="https://apps.apple.com/app/apple-store/id6825215204?mt=8&amp;ct=seo-ch-qr-rechnung">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3v12m0 0-5-5m5 5 5-5M5 21h14"/></svg>
+      <span><span class="sub">Laden im</span><span class="main">App Store</span></span></a>
+    <a class="store-btn secondary" data-store="android" href="https://play.google.com/store/apps/details?id=com.minh.invoice&amp;referrer=utm_source%3Dseo-ch-qr-rechnung%26utm_medium%3Dweb%26utm_campaign%3Dseo-ch-qr-rechnung">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3v12m0 0-5-5m5 5 5-5M5 21h14"/></svg>
+      <span><span class="sub">Jetzt bei</span><span class="main">Google Play</span></span></a>
+    <p class="microcopy">KOSTENLOS STARTEN · OHNE KONTO · OFFLINE</p>
+  </div>
+</div>
+</section>
+
+<div class="wrap">
+  <p class="sources">Invoice erstellt Dokumente aus deinen Angaben. Die App sendet nichts an die ESTV oder an eine Bank und ist kein E-Rechnungssystem.
+    Quellen: <a href="https://www.fedlex.admin.ch/eli/cc/2009/615/de">MWSTG</a>, Art. 10, 26 und 27 (Fedlex, Stand 31. März 2025, abgerufen am 28.10.2026);
+    ESTV: <a href="https://www.estv.admin.ch/de/mwst-steuerpflicht">MWST-Steuerpflicht</a>, <a href="https://www.estv.admin.ch/de/unternehmens-identifikationsnummer-uid">Unternehmens-Identifikationsnummer (UID)</a>,
+    <a href="https://www.estv.admin.ch/de/mwst-steuersaetze-schweiz">MWST-Steuersätze Schweiz</a>,
+    <a href="https://www.gate.estv.admin.ch/mwst-webpublikationen/public/pages/displayDocs/cipherPrinterFriendly.xhtml?componentId=1002626&amp;publicationId=1002536&amp;cipherKeyDate=&amp;language=de">MWST-Info 16, Ziff. 2.2</a>;
+    SIX: <a href="https://www.six-group.com/de/products-services/banking-services/payment-standardization/standards/qr-bill.html">QR-Rechnung</a>,
+    Implementation Guidelines QR-Rechnung <a href="https://www.six-group.com/dam/download/banking-services/standardization/qr-bill/ig-qr-bill-v2.3-de.pdf">v2.3</a> (gültig seit 21.11.2025, noch bis November 2027)
+    und <a href="https://www.six-group.com/dam/download/banking-services/standardization/qr-bill/ig-qr-bill-v2.4-de.pdf">v2.4</a> (gültig ab 14.11.2026). Keine Steuer- oder Rechtsberatung.</p>
+</div>
+</main>
+
+<footer class="site">
+<div class="wrap">
+  <div class="cols">
+    <div><a class="brand" href="../"><img src="../icon.png" alt="" width="32" height="32">Invoice</a>
+      <p class="about">Eine App von Nguyen Minh, einem unabhängigen Entwickler. Keine Steuer- oder Rechtsberatung.</p></div>
+    <div><h2>App</h2><ul><li><a href="../">Startseite</a></li><li><a href="../support.html">Support</a></li><li><a href="../privacy.html#website-de">Datenschutz</a></li>
+      <li><a href="../terms.html">Nutzungsbedingungen</a></li><li><a href="../impressum.html" hreflang="de">Impressum</a></li></ul></div>
+    <div><h2>Werkzeuge &amp; Ratgeber</h2><ul><li><a href="../de/girocode-erstellen.html" hreflang="de">GiroCode erstellen</a></li>
+      <li><a href="../de/kleinunternehmer-rechnung.html" hreflang="de">Rechnung als Kleinunternehmer</a></li>
+      <li><a href="qr-rechnung.html" hreflang="de-CH">QR-Rechnung erstellen</a></li>
+      <li><a href="../fr/facture-auto-entrepreneur.html" hreflang="fr">Facture auto-entrepreneur</a></li>
+      <li><a href="../nl/factuur-zzp.html" hreflang="nl">Factuur maken als zzp'er</a></li>
+      <li><a href="../en/deposit-invoice.html" hreflang="en">How to invoice a deposit</a></li></ul></div>
+  </div>
+</div>
+</footer>
+<script src="../store-links.js"></script>
+</body>
+</html>

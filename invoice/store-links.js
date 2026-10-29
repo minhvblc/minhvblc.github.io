@@ -3,6 +3,11 @@
 //
 // Campaign = ?ct=… trên URL (ví dụ link từ Reddit: /invoice/?ct=reddit-freelance) hoặc <meta name="campaign">
 // của trang (trang SEO tự đặt), mặc định "landing". HTML đã có href đầy đủ nên tắt JS vẫn tải được app.
+//
+// Đặt tên ct = <kênh>-<chi tiết> (landing, seo-de-kleinunternehmer, tool-de-girocode, reddit-freelance, producthunt,
+// pdf-footer — địa chỉ in ở chân PDF bản Free, `pdf/index.html` chuyển về trang chủ kèm ct này):
+// App Store chỉ nhận một ct nên chi tiết nằm trọn trong đó; bên Play, phần trước dấu "-" thành utm_source để
+// Play Console gộp được theo kênh, còn utm_campaign giữ nguyên ct để khớp với App Analytics khi so hai store.
 (function () {
   var APPLE_ID = "6825215204";
   var PLAY_ID = "com.minh.invoice";
@@ -17,7 +22,8 @@
 
   var apple = "https://apps.apple.com/app/apple-store/id" + APPLE_ID + "?mt=8&ct=" + encodeURIComponent(ct) +
     (APPLE_PT ? "&pt=" + encodeURIComponent(APPLE_PT) : "");
-  var referrer = "utm_source=" + encodeURIComponent(ct) + "&utm_medium=web&utm_campaign=" + encodeURIComponent(ct);
+  var channel = ct.split("-")[0];
+  var referrer = "utm_source=" + encodeURIComponent(channel) + "&utm_medium=web&utm_campaign=" + encodeURIComponent(ct);
   var play = "https://play.google.com/store/apps/details?id=" + PLAY_ID + "&referrer=" + encodeURIComponent(referrer);
 
   document.querySelectorAll('a[data-store="ios"]').forEach(function (a) { a.href = apple; });
